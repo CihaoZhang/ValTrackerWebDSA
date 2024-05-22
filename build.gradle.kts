@@ -3,12 +3,11 @@ val kotlin_version: String by project
 val logback_version: String by project
 
 plugins {
-    kotlin("jvm") version "1.9.23"
-    id("io.ktor.plugin") version "2.3.9"
+    kotlin("jvm") version "1.9.24"
+    id("io.ktor.plugin") version "2.3.10"
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 application {
     mainClass.set("ApplicationKt")
@@ -22,9 +21,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
     // JSON Parser
-    implementation("com.beust:klaxon:5.6")
+    implementation("com.beust:klaxon:5.5")
 
     // Markdown to HTML parser
     implementation("org.jetbrains:markdown:0.7.0")
@@ -52,20 +50,15 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
     // JSON parser
-    implementation("org.json:json:20210307")
+    implementation("org.json:json:20231013")
+
+    // AI API
+    implementation("com.aallam.openai:openai-client:3.7.2")
+
+    // KronTab
+    implementation("dev.inmo:krontab:2.3.0")
+
     // Test dependencies
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-
-kotlin {
-    jvmToolchain(8)
-}
-
-application {
-    mainClass.set("MainKt")
 }
