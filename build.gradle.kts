@@ -52,11 +52,11 @@ dependencies {
     // JSON parser
     implementation("org.json:json:20231013")
 
-    // AI API
-    implementation("com.aallam.openai:openai-client:3.7.2")
-
     // KronTab
     implementation("dev.inmo:krontab:2.3.0")
+
+    // VAL API
+    implementation("io.github.socketc0nnection:jva:1.2")
 
     // Test dependencies
     testImplementation("io.ktor:ktor-server-tests-jvm")

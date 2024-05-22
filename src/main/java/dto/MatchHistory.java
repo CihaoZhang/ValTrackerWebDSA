@@ -12,4 +12,22 @@ public class MatchHistory {
     private String map;
 
     private Map<String, Player> players = new HashMap<String, Player>();
+
+    public MatchHistory(int id, Date date, String map) {
+        this.id = id;
+        this.date = date;
+        this.map = map;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+
+
+
 }
